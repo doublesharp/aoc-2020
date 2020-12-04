@@ -5,11 +5,11 @@ const validators = {
   iyr: (x) => x >= 2010 && x <= 2020,
   eyr: (x) => x >= 2020 && x <= 2030,
   hgt: (x) => {
-    const [, amount, unit] = x.match(/(\d+)(cm|in)/) || [];
+    const [, amount, unit] = x.match(/^(\d+)(cm|in)$/) || [];
     return ((unit == "cm" && amount >= 150 && amount <= 193) ||
       (unit === "in" && amount >= 59 && amount <= 76));
   },
-  hcl: (x) => !!x.match(/\#[0-9a-f]{6,6}/),
+  hcl: (x) => !!x.match(/^#[0-9a-f]{6,6}$/),
   ecl: (x) => ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"].includes(x),
   pid: (x) => !!x.match(/^\d{9,9}$/),
 };
