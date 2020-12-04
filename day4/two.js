@@ -10,7 +10,7 @@ const tests = {
       (unit === "in" && amount >= 59 && amount <= 76));
   },
   hcl: (x) => !!x.match(/^#[0-9a-f]{6,6}$/),
-  ecl: (x) => ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"].includes(x),
+  ecl: (x) => !!x.match(/^(amb|blu|brn|gry|grn|hzl|oth)$/),
   pid: (x) => !!x.match(/^\d{9,9}$/),
 };
 const valid = require("fs").readFileSync("./input.txt", "utf8").split("\n\n")
