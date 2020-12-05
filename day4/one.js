@@ -1,4 +1,3 @@
-
 const list = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
 const base = list.reduce((keys, key) => ({ ...keys, [key]: false }), {});
 const valid = require("fs").readFileSync("./input.txt", "utf8").split("\n\n")
