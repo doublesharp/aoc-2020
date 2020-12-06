@@ -1,7 +1,7 @@
 const move = (min, max) => Math.round((max - min) / 2);
 const calc = (set, c, m, x) =>
   set
-    .split("")
+    .split('')
     .reduce(
       ([min, max], letter) =>
         letter === c
@@ -10,12 +10,12 @@ const calc = (set, c, m, x) =>
       [m, x]
     )[0];
 const id =
-  require("fs")
-    .readFileSync("./input.txt", "utf8")
-    .split("\n")
+  require('fs')
+    .readFileSync('./input.txt', 'utf8')
+    .split('\n')
     .reduce((ids, line) => {
       const [, rowSet, columnSet] = line.match(/^(.......)(...)$/);
-      const id = calc(rowSet, "F", 0, 127) * 8 + calc(columnSet, "L", 0, 7);
+      const id = calc(rowSet, 'F', 0, 127) * 8 + calc(columnSet, 'L', 0, 7);
       ids.push(id);
       return ids;
     }, [])
