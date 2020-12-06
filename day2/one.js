@@ -1,4 +1,6 @@
-const valid = require("fs").readFileSync("input.txt", "utf8").split("\n")
+const valid = require("fs")
+  .readFileSync("input.txt", "utf8")
+  .split("\n")
   .reduce((valid, line) => {
     const [, min, max, letter, password] = line.match(/(\d+)-(\d+) (.): (.*)/);
     const count = (password.match(new RegExp(letter, "g")) || []).length;

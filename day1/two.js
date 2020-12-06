@@ -1,4 +1,5 @@
-const vals = require('./input.json');let first, second, third;
+const vals = require('./input.json');
+let first, second, third;
 vals.some((val1) =>
   vals.some((val2) => {
     vals.some((val3) => {
@@ -8,7 +9,7 @@ vals.some((val1) =>
         third = val3;
         return true;
       }
-    })
+    });
   })
 );
 console.log(`${first} * ${second} * ${third} = ${first * second * third}`);
